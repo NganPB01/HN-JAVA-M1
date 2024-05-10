@@ -1,0 +1,110 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+#container{
+    max-width: 400px;
+    height: 100%;
+    margin: 0px auto;
+    position: relative;
+    
+}
+.item1{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcsQ3Zlty-XmMOQJUqeTaq6ZNIuEL1zBpqRw&s);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    color: #fff; 
+    padding: 5px;
+    position: relative;
+    .box1{position: absolute;}
+    .box1 p{font-size: 10px;}
+}
+
+.item2{
+    width: 200px;
+    height: 300px;
+    background-color: aqua;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPSxzjFVOPqUxZ64G_PT4lZ26EPzulImNRow&s);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    .box2{
+        position: absolute;
+        bottom: 0px;
+        padding: 5px;
+    }
+    .box2 p{font-size: 10px;}
+}
+
+.item3{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTodMMBslRiUtqFuiq5IMFV7jFla_RCz97ubQ&s);
+    width: 200px;
+    height: 100px;
+    color: #fff;
+    position: relative;
+    .box3{
+        position: absolute;
+        bottom: 0px;
+        padding: 5px;
+    }
+    .box3 p{font-size: 10px;}
+}
+
+
+.item4{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRMO2C003i0Jj1hfOW6mYt24zRD00RNOQ6ww&s);
+    width: 200px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    left: 200px;
+    bottom: 400px;
+    color: #fff;
+    padding: 5px;
+    .box4{position: absolute;}
+    .box4 p{font-size: 10px;}
+}
+.item5{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ4ZqIpdXD7xLxTBm_Hx-hadMN0RGW4pvQIw&s);
+    width: 200px;
+    height: 100px;
+    padding: 5px;
+    position: relative;
+    left: 200px;
+    bottom: 400px;
+    color: #fff;
+    .box5{position: absolute;}
+    .box5 p{font-size: 10px;}
+}
+.item6{
+    background-color: brown;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    font-size: 11px;
+    left: 200px;
+    bottom: 400px;
+    color: #fff;
+    p{padding: 5px;}
+    .box6{
+        position: absolute;
+        top: 15px;
+    }
+    .sign{
+        background-color: #fff;
+        color: black;
+        margin: 10px;
+        width: 180px;
+        position: absolute;
+        bottom: 10px;
+        flex:1;
+        text-align: center;
+    }
+}
+
+
