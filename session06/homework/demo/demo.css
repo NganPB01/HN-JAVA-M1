@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    max-width: 1200px;
+    height: auto;
+    padding: 0px auto;
+}
+.header{
+    min-height: 50px;
+    background-color: aquamarine;
+    box-shadow: 0 0 1px;
+    display: flex;
+    justify-content: space-between;
+}
+.nav{
+    display: flex;
+
+}
+li{
+    list-style: none;
+}
+.item{
+    margin: auto 30px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Cabin, sans-serif;
+}
+.main-video{
+    margin: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+.video-content{
+    width: 45%;
+    margin: auto 30px;
+}
+h2{
+    color: red;
+    font-weight: 700;
+    font-size: 25px;
+    font-family: Cabin, sans-serif;
+    padding: 20px;
+}
+.video-content p{
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    font-family: Cabin, sans-serif;
+    text-align: justify;
+}
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    font-family: Cabin, sans-serif;
+
+}
+.cam-ket{
+    max-width: 370px;
+    height: 150px;
+    p{text-align: justify;padding: 5px;}
+    margin: 5px;
+}
+.mo-hinh{
+    max-width: 370px;
+    height: 150px;
+    p{text-align: justify;padding: 5px;}
+    margin: 5px;
+    
+}
+
+.lo-trinh{
+    max-width: 370px;
+    height: 150px;
+    p{text-align: justify;padding: 5px;}
+    margin: 5px;
+}
+.duoc{
+    max-width: 370px;
+    height: 150px;
+    p{text-align: justify;padding: 5px;}
+    margin: 5px;
+}
+.phuong-phap{
+    max-width: 370px;
+    height: 150px;
+    p{text-align: justify;padding: 5px;}
+    margin: 5px;
+}
+.hoan-thien{
+    max-width: 370px;
+    height: 150px;
+    p{text-align: justify;padding: 5px;}
+    margin: 5px;
+}
+.button{
+    text-align: center;
+    .o1{
+        background-color: rgb(243, 19, 19);
+        color: #fff;
+        border-color: rgb(243, 19, 19);
+    }
+    
+}
+h3{
+    padding: 5px;
+    color: rgb(221, 59, 59);
+}
+
