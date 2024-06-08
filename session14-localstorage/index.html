@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        Localstorage:
+        là 1 dịch vụ của trình duyệt web cung cấp cho phép lưu trữ dữ liệu
+        -dung lượng lưu trữ:5MB
+        1MB=1024kb
+        -cách lưu trữ:
+            localStorage.setItem(key,value);
+            Khi lưu xong dữ liệu sẽ không bị mất đi(tắt máy,tắt trình duyệt,....thì dữ liệu vẫn còn)
+            Đối vs mảng và object khi lưu phải chuyển sang định dạng JSON
+        -cách lấy về:
+            localStorage.getItem(tên-key);
+        -xoá:
+          xoá 1
+            localStorage.removeItem(tên-key);
+          xoá hết
+            localStorage.clear();
+
+     -->
+
+
+     <!-- 
+        btvn : tạo form đăng ký ng dùng, lưu thông tin người đăng ký vào local storage dưới dạng mảng các ng dùng.
+        khi đăng ký thì có:
+        tên, id, email, mật khẩu (mỗi ng có 1 email và không được trùng) có ô input confirm mật khẩu
+        khi ấn đăng nhập thì cho ng dùng nhập lại mật khẩu, nếu sai thì báo nhập lại
+      -->
+     <script>
+        // localStorage.setItem("name","thu");
+        let numbers = [3,4,5];
+        // khi lưu mảng phải chuyển sang dạng JSON
+        let result = localStorage.setItem("name",JSON.stringify(numbers));
+        // khi lấy mảng về phì phải parse ra
+        let myArr = JSON.parse(localStorage.getItem(numbers));
+
+
+
+
+     </script>
+
+
+
+</body>
+</html>

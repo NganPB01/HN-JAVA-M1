@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+// bài 1: Viết chương trình nhập vào số tuổi của 1 người.
+//Nếu số tuổi người đó >=18 tuổi , hiển thị thông báo trên 18 tuổi ngược lại bạn chưa đủ 18 tuổi!//
+let age = Number(prompt("Nhập tuổi của bạn:"));
+console.log(age);
+if(age>=18){
+    console.log("Bạn trên 18 tuổi");
+}else{
+    console.log("Bạn chưa đủ 18 tuổi!");
+}
+
+ /*bài 2: Viết chương trình cho phép người dùng nhập vào số giờ trong ngày.
+Nếu dưới 18h thì hiển thị : “Good day”.
+Nếu trên 18h thì hiển thị : “Good evening”.
+*/
+
+ let time = Number(prompt("Nhập vào số giờ trong ngày:"));
+    console.log(time);
+    if(time<18){
+        console.log("Good day");
+    }else{
+        console.log("Good evening");
+    }
+
+
+   /* Bài 3: Viết chương trình cho phép người dùng nhập vào số giờ trong ngày.
+Nếu trước 10h thì hiển thị : “Good morning”.
+Nếu thời gian chưa tới 20h thì hiển thị : “Good day”.
+-Nếu sau 20h hiển thị : “Good evening”.
+*/
+
+   let time = Number(prompt("Nhập vào số giờ trong ngày:"));
+    console.log(time);
+    if(time<10){
+        console.log("Good morning");
+    }else{
+        if(time<20){
+            console.log("Good day");
+        }else{
+            console.log("Good evening");
+        }
+        
+    }
+
+
+     /*bài 4: Viết chương trình cho phép người dùng nhập vào 1 số.
+Kiểm tra xem số nhập vào là số chẵn hay số lẻ (sử dụng câu điều kiện if-else).
+    */
+     let a = Number(prompt("Nhập vào một số:"));
+    console.log(a);
+    if(a%2==0){
+        console.log(a + " Là số chắn");
+    }else{
+        console.log(a + " là số lẻ");
+    }
+
+
+   /*bài 5:Viết chương trình cho phép người dùng nhập vào 1 số.
+Kiểm tra xem số nhập vào là số chẵn hay số lẻ (sử dụng switch case).
+*/
+
+  let a = Number(prompt("Nhập vào một số:"));
+    console.log(a);
+    let b = a%2;
+    switch(b){
+        case 0:{
+            console.log(a + " là số chẵn");
+        }
+        break
+        case 1:{
+            console.log(a + " là số lẻ");
+        }
+        break
+        default:
+                console.log("số không thoả mãn");
+    }
+   
+     /* Bài 6: Viết chương trình cho phép người dùng nhập màu vào kiểm tra.
+Nếu nhập 1 trong các màu : xanh, đỏ,vàng thì hiển thị màu người dùng nhập
+Nếu nhập màu khác hiển thị màu không hợp lệ!
+*/
+     let inputColor = prompt("Mời nhập màu:");
+        console.log("màu người dùng nhập: ", inputColor);
+        switch(inputColor){
+            case "vàng":{
+                console.log("Hiển thị màu: ", inputColor);
+            }
+            break
+            case "xanh":{
+                console.log("Hiển thị màu: ", inputColor);
+            }
+            break
+            case "đỏ":{
+                console.log("Hiển thị màu: ", inputColor);
+            }
+            break
+        default:{
+            console.log("màu không hợp lệ");
+        }
+        }
+
+
+
+    /* Bài 7: Viết chương trình cho phép người dùng nhập vào số nguyên x:
+Nếu x==0 thì in ra x có giá trị là 0;
+Nếu x>0 thì in ra x là số nguyên dương.
+Nếu x<0 thì in ra x là số nguyên âm.
+*/
+    let x = Number(prompt("Nhập vào một số nguyên x:"));
+        console.log(x);
+        if(x==0){
+            console.log(x + " có giá trị là 0");
+        }else if(x>0){
+            console.log(x +" là số nguyên dương");
+        }else if(x<0){
+            console.log(x + " là số nguyên âm");
+        }
+
+
+      /*bài 8: Tính chỉ số cân nặng BMI :
+Viết chương trình cho phép người dùng nhập vào cân nặng(kg) và chiều cao(m);
+Sau đó hiển thị kết quả phân loại theo chỉ số BMI dưới đây.
+bmi = weight / ( height ^ 2 );
+ */
+      let weight = Number(prompt("Mời nhập vào cân nặng:"));
+        let height = Number(prompt("Mời nhập vào chiều cao:"));
+        let bmi = (weight/(height**2)*10000);
+        console.log("Đây là chỉ số BMI: ", bmi);
+        if (bmi<18.5) {
+            console.log("Cân nặng thấp (gầy)");
+        }else if(bmi>=18.5 && bmi<=24.9){
+            console.log("Bình thường");
+        }else if(bmi=25){
+            console.log("Thừa cân");
+        }else if(bmi>=29.9){
+            console.log("Tiền béo phì");
+        }else if(bmi>=34.9){
+            console.log("Béo phì độ I");
+        }else if(bmi>=39.9){
+            console.log("Béo phì độ II");
+        }else if(bmi>=40){
+            console.log("Béo phì độ III");
+        }    
+        // em check bài 8 mà đang bị lỗi đoạn béo phì ko ra được thầy ạ!, thầy check giúp e với ạ.
+
+
+        /*Bài 9: Viết chương trình cho phép người dùng nhập điểm các môn:Toán,Lí,Hoá,
+Văn, Sử , Địa (thang điểm 10);
+Sau đó tính điểm trung bình các môn học
+Hiển thị kết quả học tập theo loại như sau:
+
+8.0 <=ĐTB<=10: xếp loại GIỎI.
+6.5<=ĐTB<=7.9: xếp loại KHÁ.
+5.0<=ĐTB<=6.4: xếp loại TRUNG BÌNH.
+ĐTB<5.0 : xếp loại YẾU. 
+        */
+
+
+
+        /* bài 10 Viết chương trình nhập vào số tháng trong năm,in ra số ngày trong tháng đó.
+Ví dụ : Người dùng nhập vào số 7 thì in ra tháng 7 có 31 ngày.
+*/
+        let month = parseInt(prompt('Nhập số tháng trong năm(1-12):'));
+        let year = parseInt(prompt('Nhập vào 1 năm:'));
+        if(month==4 || month==6 || month==9 || month==11){
+            console.log("tháng", month, "có 30 ngày");
+        }else if(month==1 || month==3 || month==5 || month==7 || month==8 || month==10 || month==12){
+            console.log("tháng", month, "có 31 ngày");
+        }else if(month==2){
+            if(year%4===0 && year%100===0 && year%400===0 || year%4===0){
+                console.log("tháng", month, "có 29 ngày");
+            }else{
+                console.log("tháng", month, "có 28 ngày");
+            }
+        }else{
+            console.log("mời nhập lại tháng");
+        }
+</script>
+</body>
+</html>

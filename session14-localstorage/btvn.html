@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        btvn : tạo form đăng ký ng dùng, lưu thông tin người đăng ký vào local storage dưới dạng mảng các ng dùng.
+        khi đăng ký thì có:
+        tên, id, email, mật khẩu (mỗi ng có 1 email và không được trùng) có ô input confirm mật khẩu
+        khi ấn đăng nhập thì cho ng dùng nhập lại mật khẩu, nếu sai thì báo nhập lại
+      -->
+
+      <div id="main">
+        <div class="title"><h3>Đăng ký tài khoản</h3></div>
+        <form action="">
+            <label for="name">Họ và tên:</label><br>
+            <input type="text" id="name"><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" required><br>
+            <label for="password">Mật khẩu:</label><br>
+            <input type="password" id="password" required><br>
+            <label for="confirmpassword">Xác nhận mật khẩu:</label><br>
+            <input type="password" id="confirmpassword" required><br>
+            <button style="background-color: rgb(99, 99, 240);" onclick="add()">Đăng ký</button>
+        </form>
+        </div>
+
+        <script>
+            
+            // lưu information lên localstorage
+            let information = JSON.parse(localStorage.getItem("information")) || [];
+            function add() {
+                let valueName = document.getElementById("name").value;
+                let valueEmail = document.getElementById("email").value;
+                let valuePassword = document.getElementById("password").value;
+                // tạo object
+                let user = {
+                    name: valueName,
+                    email: valueEmail,
+                    password: valuePassword,
+                    id: Math.floor(Math.random() * 99999999)
+                }
+                information.push(user);
+                localStorage.setItem("user",JSON.stringify(information));
+                console.log("information", information);
+            }
+            // xử lý trùng email
+            let trungEmail = [];
+            for (let i = 0; i < information.length; i++) {
+                if(trungEmail.indexOf(information.valueEmail[i])===-1){
+                    
+                }
+                
+            }
+
+            // ấn đăng nhập sẽ yêu cầu ng dùng nhập lại email
+
+        </script>
+
+
+</body>
+</html>

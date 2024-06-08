@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        /* 
+            vòng lặp while
+            cú pháp: 
+                while(điều kiện){
+                    //phần thực thi
+                }
+            nếu điều kiện thỏa mãn thì phần thực thi được chạy
+            nếu điều kiện không thõa mãn thì phần thực thi không
+            được chạy.
+            khi dùng while chú ý điểm dừng cho vòng lặp để tránh
+            trường hợp vòng lặp vô tận
+            nó có thể không chạy tức là nếu điều kiện không đúng
+            thì không chạy
+            thường dùng khi không biết trước số lần vòng lặp chạy
+        */
+       let i=0;
+       let arr=[4,4,5,6,7,3,2,2,2,2,2,2,2,2,2,2];
+       console.log(arr.length);
+       while(i<5){
+        console.log("giá trị i",i);
+        i++
+        if(i==3){
+            break;
+        }
+       }
+       console.log("i",i);
+       let age=+prompt("mời nhập số tuổi >18!");
+       while(age<18){
+        age=prompt("mời nhập lớn hơn 18!")
+       }
+    </script>
+</body>
+</html>

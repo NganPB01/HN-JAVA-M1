@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /* 
+            1. đối với dạng toán yêu cầu lấy thông tin người dùng nhập
+             prompt 
+             mặc định kết quả trả về của prompt là string.
+             muốn ép kiểu string sang dạng number
+             có 2 cách 
+             let a="5";
+             Number(a);
+             +a;
+             parseInt: đây là 1 phương thức trong js giúp chuyển string sang dạng số nguyên
+             parseFloat :==> sang dạng số thực
+             toLowerCase(): là phương thức chuyển chữ IN HOA thành IN THƯỜNG
+             toUpperCase(): là phương thức chuyển chữ THƯỜNG thành IN HOA
+         */
+                // let inputValue=prompt("mời nhập giá trị!");
+                // console.log("giá trị",inputValue);
+            //     console.log("giá trị người dùng vừa nhập",inputValue);
+            //     console.log("kiểu dữ liệu sẽ là ",typeof(inputValue));
+            //   console.log("2"+3);
+            // console.log(parseFloat("5.5jh"));
+            // console.log("MiNh Thu".toLowerCase());
+            // console.log("hải ANh".toUpperCase());
+            let month = parseInt(prompt('Nhập số tháng trong năm(1-12):'));
+                // console.log(isNaN(month));
+                // console.log(!isNaN(month));
+                if (!isNaN(month) && month >= 1 && month <= 12) {
+                    if (month === 2) {
+                        let nam = parseInt(prompt("Nhập vào 1 năm:"));
+                        /* 
+                            năm nhuận là chia hết cho 4
+                                + nếu chia hết cho 100 thì phải chia hết chia 400
+                                
+                                ví dụ năm 1100 không phải năm nhuận
+                         */
+                        if(nam%4==0){
+                            if(nam%100==0){
+                                if(nam%400==0){
+                                    console.log("là năm nhuận");
+                                }else{
+                                    console.log("không phải năm nhuận");
+                                }
+                            }else{
+                                console.log("là năm nhuận!");
+                            }
+                        }else{
+                            console.log("không phải năm nhuận");
+                        }
+    </script>
+</body>
+</html>

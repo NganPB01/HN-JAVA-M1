@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="mời nhập công việc" id="job" type="text" value="ngan">
+    <button onclick="addJob()">add job</button>
+    <!-- 
+     Các bước làm
+     B1: đi tạo giao diện
+      + gồm có 1 ô input cho người dùng nhập
+      + button để cho người dùng nhấn để thêm item
+     B2. khi người dùng nhấn vào nut add job thì gọi hàm thêm job
+     B3. đi tạo 1 cái mảng để lưu tất cả công việc
+     B4. khởi tạo đối tượng công việc bao gồm các thuộc tính sau
+      content,id
+     B5: lấy thông tin người dùng nhập
+
+
+      Math.random(): sẽ tạo ra 1 số ngẫu nhiên 0<= X <1 VÍ DỤ:0.24882603836712858
+     -->
+    <ul id="jobs">
+    </ul>
+    <script>
+        let student = {
+            name: "hoa"
+        }
+        student.name = "hồng"
+        // console.log("số ngẫu nhiên", Math.floor(Math.random() * 99999999));  
+        // khởi tạo hàm đi thêm công việc
+        let jobs = JSON.parse(localStorage.getItem("jobs")) || []; //lấy trên local
+
+        function addJob() {
+            //  console.log("đã gọi hàm!");
+            let valueJob = document.getElementById("job").value;
+            // console.log("giá trị người dùng nhập:",valueJob);
+            let job = {
+                content: valueJob,
+                id: Math.floor(Math.random() * 99999999)
+            }
+            // sau khi có công việc rồi đi thêm vào danh sách công việc.
+            jobs.push(job);
+            localStorage.setItem("jobs",JSON.stringify(jobs)); //lưu trên local
+            // gọi hàm để render
+            console.log("jobs",jobs);
+             renderJob();
+        }
+        // tạo 1 function để hiển thị danh sách công việc
+        function renderJob() {
+            let text ="";
+            for (let i = 0; i < jobs.length; i++) {
+                text += `
+                <li>
+                    ${jobs[i].content}
+                    <button onclick="deleteJob(${jobs[i].id})" >xóa</button>
+                    <button>sửa</button>
+                </li>
+    `
+            }
+            document.getElementById("jobs").innerHTML = text;
+            
+        }
+
+        function deleteJob(id) {
+            let confirmDelete = confirm("bạn có chắc chắn muốn xoá không?");
+            if(confirmDelete){
+                for(let i=0; i < jobs.length; i++){
+                    if(jobs[i].id === id){
+                        // xoá phần tử trong mảng
+                        jobs.splice(i, 1);
+                        // lưu lại
+                        localStorage.setItem("jobs", JSON.stringify(jobs));
+                    }
+                }
+            }
+        }
+
+
+        
+
+        // let students=["hoa","hồng","ngọc"];
+        // function test() {
+        //     let text="";
+        //     for (let i = 0; i < students.length; i++) {
+        //         text+=`<li>${students[i]}<li/>`
+        //     }
+        //     document.getElementById("jobs").innerHTML=text
+        // }
+        // test()
+
+    </script>
+</body>
+</html>

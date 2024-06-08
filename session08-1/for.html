@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+     <!-- 
+        Vòng lặp for
+        -dùng để duyệt theo thứ tự
+        -cú pháp:
+        for(let i=0;i<5;i++){
+            // phần thực thi
+        }
+        -cấu trúc cơ bản của for
+        1. giá trị khởi tạo
+        2. điều kiện
+        3. bước nhảy
+        - sau khi hiểu cú pháp học về luồng chạy
+        - đầu tiên giá trị khởi tạo đi so sánh với điều kiện nếu thỏa
+        mãn thì chạy phần thân==> sau khi chạy phần thân quay về 
+        bước nhảy==> lại kiểm tra điều kiện==>
+        *******************
+        advanced tư duy for-lồng
+     -->
+     <script>
+        for (let  i = 0; i <4 ; i++) {
+            console.log("giá trị i",i);
+
+          for (let j = 0; j < 3; j++) {
+            console.log("giá trị j",j);
+          }
+          console.log("*********");
+        }
+        for (let i = 4; i >0; i--) {
+            console.log("giá trị i", i);
+            
+            
+        }
+     /* 
+       1. toán tử tăng giảm
+       2. tìm hiểu các từ khóa :break,continune trong vòng lặp
+       3. while; do-while
+      for (let j = 0; j < 3; j++) {
+        console.log("giá trị j", j);
+      }
+      console.log("*********");
+    }
+    for (let i = 4; i > 0; i--) {
+      console.log("giá trị i", i);
+    } */
+    /* 
+      1. toán tử tăng giảm
+      a++ hậu tố :sẽ cộng sau
+      ++a tiền tố: cộng trước
+      2. tìm hiểu các từ khóa :break,continune trong vòng lặp
+      break dùng để thoát vòng lặp
+      có tác dụng gì?
+      continune bỏ qua lần lặp
+      3. while; do-while
+      */
+    
+     
+    // let a = 5;
+    // let result= a++ + ++a + a++ + a + a++;
+    // console.log(result);
+    // //  5 + 7 +7 +8+8
+    // let b=4;
+    // b++;
+    // ++b;
+    // console.log(b);
+
+    for (let i = 0; i <4; i++) {
+      console.log("i",i);
+      for (let j = 0; j < 4; j++) {
+        console.log(j);
+        break;
+      }
+    }
+
+     </script>
+</body>
+</html>

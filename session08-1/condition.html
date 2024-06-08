@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- 
+        1. câu điều kiện if-else (nếu-thì)
+        + nếu điều kiện thỏa mãn thì phần if được thực thi
+        + nếu điều kiện không thõa mãn thì phần else được thực thi
+        + cú pháp
+         if(điều kiện){
+            // phần thực thi
+         }else{
+            // phần thực thi
+         }
+        2. câu điều kiện if-else lồng : tức là trong if lại có if-else
+        3. if-else bậc thang
+         if(điều kiện){
+            // phần thực thi
+         }else if(điều kiện){
+            // thực thi
+         }else if(điều kiện){
+            // thực thi
+         }
+     -->
+     <script>
+        let age = 18;
+        let name = "minh thu";
+
+        // thầy muốn in ra câu xin chào minh thu năm nay 18 tuổi
+        // dùng dấu literal- template  string
+        // falsy và truthy
+        // falsy gồm các giá trị sau
+        /* 
+            falsy gồm các giá trị sau
+            0, null, NaN, undefined, false, "", ''
+            truthy không phải là falsy 
+         */
+        console.log(`xin chào ${name} năm nay ${age} tuổi`);
+        if (age >= 18) {
+            console.log("bạn đủ 18 tuổi!");
+        } else {
+            console.log("bạn không đủ 18 tuổi!");
+        }
+        if ("null") {
+            console.log("5 thõa mãn");
+        } else {
+            console.log("không thỏa mãn");
+        }
+
+        let a = 15;
+        if (a > 20) {
+            console.log("1");
+        }
+        else {
+            console.log("2");
+            if (a > 5) {
+                console.log("3");
+                if (a > 18) {
+                    console.log("5");
+                } else {
+                    console.log("6");
+                }
+            } else {
+                console.log("4");
+            }
+        }
+        let firstName = "Minh Thu";
+        if (firstName == "Minh") {
+            console.log("11");
+        } else {
+            console.log("12");
+            if (firstName == "hoa") {
+                console.log("13");
+            } else {
+                console.log("14");
+                if (firstName == "minh thu") {
+                    console.log("15");
+                } else {
+                    console.log("16");
+                }
+            }
+        }
+        console.log("**********************");
+
+        let number = 15;
+        if (number > 20) {
+            console.log("hiệp1");
+        } else if (number % 2 !== 0) {
+            console.log("hiệp2");
+        } else if (number % 4 !== 0) {
+            console.log("hiệp 3");
+        } else{
+            console.log("không có thõa mãn");
+        }
+    </script>
+    
+</body>
+</html>

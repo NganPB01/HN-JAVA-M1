@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- 
+        1. Function là gì? mục đích dùng để làm gì?
+          Function hay còn gọi là hàm, giúp gói gọn code, logic lại thực thi
+          một tác vụ cụ thể, giúp code gọn gàng, có tính TÁI SỬ DỤNG (dùng lại!)
+          Tức là viết 1 lần dùng nhiều lần.
+
+        2. Các loại function, cách dùng.
+          + declaration: function bình thường
+            + cú pháp:
+                function TÊN_HÀM (){
+                    // THÂN HÀM NƠI VIẾT LOGIC XỬ LÝ
+                }
+                Lưu Ý: đặt tên hàm có ý nghĩa, và viết theo quy tắc camel-case
+                phải gọi hàm thì hàm mới được chạy, không gọi không chạy
+                có hoisting nên có thể gọi trước khi khai báo hoặc gọi sau khi khai báo
+                đều được.
+          + arrow function - hàm mũi tên.
+                let result=()=>{
+                    // THÂN HÀM, NƠI VIẾT LOGIC
+                }
+                Lưu ý: phải gọi hàm mới được thực thi
+                + bắt buộc phải gọi sau khi khai báo, không được gọi trước khi khai báo.
+         + ngoài 2 hàm chính, expression funcion,IIFE (invoke Immediately function expression)
+        3. tham số (params), đối số( argument) trong hàm.
+        tham số là giá trị nhận vào, đối số là giá trị truyền 
+        giúp cho tái sử dụng code.
+        4. return trong hàm.
+          + kết thúc việc xử lý hàm
+          + kết quả trả về của hàm.
+        5. đệ quy.
+        6. callback.
+     -->
+     <script>
+        // var a;
+        // console.log(a);
+        // a = 8;
+        let students = ["hoa", "an", "lan", "minh"];
+        /* 
+            khi hiển thị danh sách sẽ có 4 người
+            Tạo 1 hàm công dụng để thị hiển thị danh sách người dùng (READ);
+            Tạo 1 hàm để đi xóa user
+         */
+        // tạo,khai báo 1 function sayHello
+        function sayHello() {
+            // thân hàm 
+            let fullName = "vũ hồng vân";
+            console.log(`xin chào ${fullName}`);// literal template string
+        }
+        sayHello();// gọi hàm để chạy.
+        // để thực thi code ở bên trong hàm thì phải đi gọi hàm.
+    </script>
+    <script src="./arrow.js"></script>
+    <script src="./expression.js"></script>
+    <script src="./iife.js"></script>
+    <script src="./declaration.js"></script>
+    <script src="./deQuy.js"></script>
+    <script src="./callback.js"></script>
+
+</body>
+</html>

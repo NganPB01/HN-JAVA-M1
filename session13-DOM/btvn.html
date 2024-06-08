@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- cho layout ở phía dưới
+        this is a text
+        nút bấm Hide text và nút bấm Show text
+        bài toán>>> khi click vào "Hide text" thì dòng chữ bên trên sẽ ẩn đi
+                    khi click vào "Show text" thì dòng chữ bên trên sẽ hiện ra
+     -->
+    <h1 id="one">This is a text.This is a text.This is a text.</h1>
+    <button onclick="hideText()">Hide text</button>
+    <button onclick="showText()">Show text</button>
+    <script>
+    function hideText() {
+        document.getElementById("one").innerHTML="";
+    }
+    function showText() {
+        document.getElementById("one").innerHTML="This is a text.This is a text.This is a text.";
+    }
+    </script>
+
+</body>
+</html>

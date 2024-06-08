@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          /* 
+            Array: mảng
+            1. mảng dùng để chứa các phần tử( các phần tử có thể
+                là các kiểu dữ liệu khác nhau, các phần ngăn cách
+                với nhau bởi dấu phẩy
+            )
+            2. cú pháp khai báo mảng
+            let numbers =[];
+            3. để đếm số phần tử trong mảng tên mảng . length
+            độ dài của mảng hay còn gọi số các phần tử trong mảng
+            bộ nhớ 
+            stack heap
+            4. CRUD với mảng:
+              C: create : thêm mới
+                + dùng phương thức push():
+                sẽ thêm phần tử vào cuối mảng
+                + dùng unshift()
+                sẽ thêm phần tử vào vị trí đầu mảng
+                +thêm vào vị trí bất kì thì làm thế nào
+                +dùng splice()
+                 splice(vị trí,số phần tử muốn xóa,giá trị phần tử thêm vào)
+              R: read   : đọc, in ra
+                - dùng for
+              U: update : cập nhật
+                - vị trí update 
+                 + tên mảng[vị trí]="giá trị mới"
+                -dùng splice(vị trí, số phần xóa, giá trị cập nhật)
+              D: delete : xóa
+                -xóa phần tử đầu shift()
+                -xóa cuối pop()
+                -xóa theo vị trí
+                 + splice(vị trí,số phần tử muốn xóa,giá trị nhập)
+        */
+        let text = prompt("nhập tên");//hà
+        let students = [
+            {
+                name: "hoa",
+                id: 111,
+                address:"hn",
+            },
+            {
+                name: "hoa",
+                id: 112,
+                address: "hn",
+
+            },
+        ];
+        for (let i = 0; i < 4; i++) {
+            if (text == students[i]) {
+                students.splice(i, 1);
+            }
+
+        }
+        // console.log(students[2]);
+        console.log("số phần tử trong mảng students", students.length);
+        let numbers = [[2, 3], [4, 6], [9, 5]];
+        let myArr = [];
+        // students.push("mai");
+        // students.unshift("phương");
+        //[phương,hoa,lan,hà,minh,mai]
+        // students.splice(3,0,"Thu");
+        console.log("in ra các phần tử");
+        for (let i = 0; i < students.length; i++) {
+            console.log("các user", students[i]);
+        }
+        console.log("update");
+        // students[0]="hồng";
+        // students.splice(1,1,"huệ");
+        students.splice(1, 2);
+        console.log("students", students);
+
+        /* alt + mũi tên */
+
+    </script>
+</body>
+</html>

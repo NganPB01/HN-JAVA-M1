@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- cho mảng dữ liệu tên học sinh
+    bài toán>>>chuyển dữ liệu đó dưới dạng danh sách
+     -->
+    <h1>tên ng dùng</h1>
+    <ul id="nameList"></ul>
+    
+    <script>
+        let arr=[`nguyên`,`mai`,`hoa`];
+        function fN() {
+            let text=``;
+            for (let i=0; i < arr.length; i++){
+                text+=`<li>${arr[i]} </li>`;
+            }
+            document.getElementById("nameList").innerHTML=text;
+        }
+        fN()
+
+    </script>
+</body>
+</html>

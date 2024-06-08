@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="mời nhập công việc" id="job" type="text" value="ngan">
+    <button onclick="addJob()">add job</button>
+    <ul id="jobs">
+    </ul>
+    
+    <script>
+        let jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+        function addJob() {
+            let valueJob = document.getElementById("job").value;
+            let job = {
+                content: valueJob,
+                id: Math.floor(Math.random() * 99999999)
+            }
+            jobs.push(job);
+            localStorage.setItem("jobs",JSON.stringify(jobs));
+            console.log("jobs",jobs);
+            renderJob();
+        }
+        
+        function renderJob() {
+            let text = "";
+            for (let i = 0; i < jobs.length; i++) {
+             text += `
+             <li>${jobs[i].content} 
+                <button onclick="deleteJob(${jobs[i].id})">xoá</button>
+                <button>sửa</button>
+             </li>
+             `
+            }
+            document.getElementById("jobs").innerHTML = text;
+        }
+
+        function deleteJob(id) {
+            let confirmDelete = confirm("bạn có chắc chắn muốn xoá ko?");
+            if(confirmDelete){
+                for (let i = 0; i < jobs.length; i++) {
+                    if(jobs[i].id === id){
+                        jobs.splice(i, 1);
+                        localStorage.setItem("jobs", JSON.stringify(jobs));
+                        
+                    }
+                    
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
