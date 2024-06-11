@@ -3,47 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
     <title>Module 01</title>
 </head>
 <body>
-    <style>
-        *{
-            margin: 0px auto;
-            max-width: 1200px;
-            padding: 0;
-            text-align: center;
-        }
-        .container{
-            display: flex;
-        }
-        #input{
-            background-color: blue;
-            color: #fff;
-            padding: 2px;
-            width: 170px;
-            margin-top: 15px;
-        }
-        h3{
-            padding: 5px;
-        }
-
-    </style>
     <div class="container">
         <div class="register">
-            <h3>Add Employee</h3>
-        <form action="" onsubmit="addName(event)">
-            <label for="code">Employee code</label><br>
-            <input type="text" id="code"><br>
-            <label for="name">Employee name</label><br>
-            <input type="text" id="name"><br>
-            <label for="email">Email</label><br>
-            <input type="email" id="email" required><br>
-            <button id="input" >Add Employee</button>
-        </form>
+          <h2>Add Employee</h2>
+            <form action="" class="form" onsubmit="addName(event)">
+                <label class="label" for="code">Employee code</label><br>
+                <input type="text" id="code"><br>
+                <label class="label" for="name">Employee name</label><br>
+                <input type="text" id="name"><br>
+                <label class="label" for="email">Email</label><br>
+                <input type="email" id="email" required><br>
+                <button id="input" >Add Employee</button>
+            </form>
         </div>
         <div class="list">
-            <h3>Employee List</h3>
-            <table border ="1">
+            <h2>Employee List</h2>
+            <table border="1">
                 <thead>
                     <tr>
                         <th>STT</th>
@@ -58,75 +37,6 @@
             </table>
         </div>
     </div>
-    
-    <script> 
-    let employeeList = JSON.parse(localStorage.getItem(`employee`)) || [];
-    function addName(event) {
-            console.log('2345');
-            event.preventDefault();
-        let code= document.getElementById("code").value;
-        let name= document.getElementById("name").value;
-        let email= document.getElementById("email").value;  
-        let check = false;
-        for (let i = 0; i < employee.length; i++) {
-            if(employee[i].email===email){
-                check=true;
-                return;
-            }
-            if (check===true) {
-                alert("email đã tồn tại");
-                return;
-            }
-            
-        }
-        let employee = {
-            employeeCode: code,
-            employeeName: name,
-            employeeEmail: email, 
-        };
-        employeeList.push(employee);
-        localStorage.setItem("employee",JSON.stringify(`employeeList`));
-        renderEmployee();  
-    }
-    function renderEmployee() {
-        let table = "";
-        for (let i = 0; i < employeeList.length; i++) {
-            table+= 
-                    `
-                    <tr>
-                        <td>${i+1} </td>
-                        <td>${employeeList[i].employeeCode} </td>
-                        <td>${employeeList[i].employeeName} </td>
-                        <td>${employeeList[i].employeeEmail}</td>
-                        <td>
-                            <button onclick="update(${i})">Sửa</button>
-                            <button onclick="deleteUser(${i})">Xoá</button>
-                        </td>
-                    </tr>
-                    `;
-            
-        }
-        document.getElementById("content").innerHTML=table;
-    }
-    renderEmployee();
-    function deleteUser (abc) {
-        confirmDelete= confirm("Bạn chắc chắn muốn xoá không?");
-        if(confirmDelete){
-            for (let i = 0; i < employeeList.length; i++) {
-                if (i=abc) {
-                    employeeList.splice(i,1);
-                    localStorage.setItem("employee",JSON.stringify(employeeList));
-                    renderEmployee()
-                    break;
-                }
-                
-            }
-        }
-    }
-     
-   
-     
-    </script>
 
     <script src="./index.js"></script>
 </body>
