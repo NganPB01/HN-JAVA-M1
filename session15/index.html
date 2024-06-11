@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+ *{
+    margin: 0;
+    max-width: 1200px;
+    height: auto;
+    padding: 0px auto;
+    text-align: center;
+    background-color: aquamarine;
+}
+.container{
+    padding: 0px;
+    
+}
+.main{
+    padding: 10px;
+    
+}
+.input{
+    border-color: rgb(49, 49, 250);
+}
+.addJob{
+    background-color: blue;
+    color: #fff;
+}
+
+#content{
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+        
+        
+
+    </style>
+    <div class="container">
+    <h3 class="header">Danh sách công việc</h3>
+    
+    <div class="main">
+        <input type="text" id="job" class="input">
+        <button onclick="addJob()" class="addJob">Thêm</button>
+        <p id="error" style="color: red;"></p>
+        <ul id="content"></ul>
+    </div>
+    <p id="percent"></p>
+    </div>
+
+    <script>
+        let jobs = JSON.parse(localStorage.getItem("job")) || [];
+        function addJob() {
+            let valueJob = document.getElementById("job").value;
+            if(valueJob.length==0){
+                document.getElementById("error").innerHTML="Tên công việc không được phép để trống";
+                return;
+            }
+            document.getElementById("job").innerHTML="";
+            let job ={
+                jobName: valueJob,
+                status: true,
+                id: Math.floor(Math.random()* 9999999)
+            };
+            jobs.push(job);
+            localStorage.setItem("jobs",JSON.stringify(`jobs`));
+            renderJob();
+        }
+        // hàm hiển thị
+        function renderJob() {
+            let text="";
+            let count = 0;
+            for (let i = 0; i < jobs.length; i++) {
+                let flag="";
+                let checkbox="";
+                let percent = (count/jobs.length)*100;
+                if(jobs[i].status===true){
+                    count++;
+                    checkbox += `<input type="checkbox" onclick=choose(${jobs[i].id})>`;
+                    flag += `<span>${jobs[i].jobName}</span>`
+                }else{
+
+                    checkbox += `<input type="checkbox" onclick=choose(${jobs[i].id}) checked >`;
+                    flag +=`<s>${jobs[i].jobName}</s>`
+                }
+                text +=
+                        `
+                        ${checkbox}
+                        ${flag}
+                        <button onclick="deleteJob(${jobs[i].id})">Xoá</button><br><hr>
+                        `
+                
+            }
+                // xử lý % hoàn thành công việc
+            let completionRate = 0; //khai báo số % hiển thị
+            let completionMassage =""; // khai báo biến hiện câu text % hiển thị
+            if(jobs.length===0){
+                completionRate = 0;
+                completionMassage ="";
+            }else {
+                completionRate = (count/jobs.length)*100;
+                if(completionRate===100){
+                    completionMassage = "Hoàn thành công việc";
+                }else{
+                    completionMassage = `Tiến độ hoàn thành: ${completionRate.toFixed(2)}%`;
+                }
+            }
+            document.getElementById("content").innerHTML=text;
+            document.getElementById("percent").innerHTML=completionMassage;
+          
+        }
+        
+        renderJob();
+        function deleteJob(thu) {
+            let confirmDelete = confirm("bạn có muốn xoá hay không?");
+            for (let i = 0; i < jobs.length; i++) {
+                if(jobs[i].id===thu){
+                    jobs.splice(i,1);
+                    localStorage.setItem("jobs",JSON.stringify(jobs));
+                    renderJob();
+                    break;
+                }
+                
+            }
+        }
+        function choose(mai){
+            console.log("aaaaa", mai);
+            for (let i = 0; i < jobs.length; i++) {
+                if(jobs[i].id===mai){
+                    jobs[i].status=!jobs[i].status;
+                    localStorage.setItem("jobs",JSON.stringify(jobs));
+                    renderJob();
+                    break
+                }
+            }
+
+        }
+        // for duyệt qua mảng job
+        // let count = 0;
+        // for (let i = 0; i < jobs.length; i++) {
+        //    if(job[i].status==true){
+        //     count++
+        //    }
+        // }
+        // // phần trăm tiến độ
+        // let percent = (count/(jobs.length))*100;
+        // console.log(percent);
+        // document.getElementById("percent").innerHTML=`Hoàn thành tiến độ công việc ${percent}`;
+
+    </script>
+
+    
+
+</body>
+</html>
